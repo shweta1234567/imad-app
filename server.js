@@ -22,6 +22,9 @@ app.get('/test-db',function(req,res){
         if(err){
             res.status(500).send(err.to.String());
         }
+        else{
+            res.send(JSON.stringify(result));
+        }
     });
 });
 app.get('/article-one',function(req,res){
