@@ -9,7 +9,8 @@ var config={
     host:'db.imad.hasura-app.io',
     database:'shwetasuman4010',
     user:'shwetasuman4010',
-    port:'5432'
+    port:'5432',
+    password:process.emv.DB-PASSWORD
 };
 
 var pool=new Pool(config);
