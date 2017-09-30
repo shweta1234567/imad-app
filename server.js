@@ -4,7 +4,12 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
+var config={
+    host:'localhost',
+    database:'shwetasuman4010'
+    user:'shwetasuman4010',
+    password:
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
