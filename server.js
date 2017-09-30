@@ -5,16 +5,24 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 var config={
-    host:'localhost',
-    database:'shwetasuman4010'
+    host:'db.imad.hasura-app.io',
+    database:'shwetasuman4010',
     user:'shwetasuman4010',
-    password:
-}
+    port:'5432',
+    password: process.emv.DB_PASSWORD
+};
+
+var pool=new Pool(config);
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/test-db',function(req,res){
-    
+    pool.query('SELECT * FROM test',function(err,result){
+        if(err){
+            res.status(500).send(err.to String());
+        }
+    });
 });
 app.get('/article-one',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
