@@ -10,7 +10,7 @@ var config={
     database:'shwetasuman4010',
     user:'shwetasuman4010',
     port:'5432',
-    password:process.emv.DB-PASSWORD
+    password:process.emv.DB_PASSWORD
 };
 
 var pool=new Pool(config);
