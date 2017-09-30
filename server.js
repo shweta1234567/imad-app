@@ -6,7 +6,7 @@ var app = express();
 var Pool=require('pg').Pool;
 app.use(morgan('combined'));
 var config={
-    host:'db.imad.hasura-app.io',
+    host:'localhost',
     database:'shwetasuman4010',
     user:'shwetasuman4010',
     port:'5432',
